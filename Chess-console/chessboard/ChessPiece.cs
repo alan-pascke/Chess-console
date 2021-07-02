@@ -12,10 +12,6 @@ namespace chessboard
         public int numberOfmoves { get; protected set; }
         public ChessPiece chessPiece { get; set; }
 
-        public ChessPiece()
-        {
-        }
-
         public ChessPiece(Position position, Color color,  ChessPiece chessPiece)
         {
             this.position = position;

@@ -9,6 +9,8 @@ namespace Chess_console
         {
             ChessBoard chessBoard = new ChessBoard(8, 8);
 
+            Screen.printChessBoard(chessBoard);
+
         }
     }
 }
