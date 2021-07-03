@@ -13,14 +13,15 @@ namespace Chess_console
                 {
                     if (chessBoard.piece(i, j) == null)
                     {
-                        System.Console.Write("- ");
+                        System.Console.Write(" -    ");
                     }
                     else 
                     { 
-                    System.Console.Write(chessBoard.piece(i, j) + " ");
+                    System.Console.Write(chessBoard.piece(i, j) + "  ");
                     }
                 }
-                System.Console.WriteLine( );
+                System.Console.WriteLine();
+                System.Console.WriteLine();
             }
         }
     }

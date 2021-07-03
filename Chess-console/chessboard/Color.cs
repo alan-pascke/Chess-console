@@ -12,7 +12,5 @@ namespace chessboard
         Yellow,
         Blue,
         Brown,
-        Gray,
-
     }
 }
