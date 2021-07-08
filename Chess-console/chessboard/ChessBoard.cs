@@ -20,15 +20,54 @@ namespace chessboard
         {
             return chessPieces[line, column];
         }
+
+        public ChessPiece piece (Position position)
+        {
+            return chessPieces[position.line, position.column];
+        }
         public void PieceInsertion(ChessPiece piece, Position position)
         {
-            //Aqui está buscando uma posição que foi digitada e inserindo uma peça nesta posição
-            chessPieces[position.line, position.column] = piece;
+            if (PieceExist(position))
+            {
+                throw new ChessboardExeption("there is a piece on this position");
+            }
+            else
+            {
+                //Aqui está inserindo uma peça na posição que chegou como parametro
+                chessPieces[position.line, position.column] = piece;
 
-            //Abaixo irá atualizar a posição da peça:
-            //posição da peça irá mudar para a posição que está definida acima em
-            //"chessPieces[position.line, position.column]"
-            piece.position = position;
+                //Abaixo irá atualizar a posição da peça:
+                //posição da peça irá mudar para a posição que está definida acima em
+                //"chessPieces[position.line, position.column]"
+                piece.position = position;
+            }
+        }
+
+        //verificar se existe alguma peça na posição
+        public bool PieceExist(Position position)
+        {
+            validatePosition(position);
+            return piece(position) != null;
+        }
+
+        // retorna mensagem de erro caso a posição seja invalida
+        public void validatePosition(Position position)
+        {
+            if (!truePosition(position))
+            {
+                throw new ChessboardExeption("Invalid position");
+            }
+        }
+
+        // testando se a posição é valida
+        public bool truePosition(Position position)
+        {
+            if (position.line < 0|| position.line >= lines 
+                || position.column <0 || position.column >= columns)
+            {
+                return false;
+            }
+            return true;
         }
     }
 }
