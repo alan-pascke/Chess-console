@@ -1,4 +1,4 @@
-﻿
+﻿using System;
 using chessboard;
 
 namespace Chess_console
@@ -9,6 +9,7 @@ namespace Chess_console
         {
             for (int i = 0; i < chessBoard.lines; i++)
             {
+                System.Console.Write(8 - i + "  | ");
                 for (int j = 0; j < chessBoard.columns; j++)
                 {
                     if (chessBoard.piece(i, j) == null)
@@ -16,14 +17,30 @@ namespace Chess_console
                         System.Console.Write(" -  | ");
                     }
                     else 
-                    { 
-                    System.Console.Write(chessBoard.piece(i, j) + " | ");
+                    {
+                        printChessBoard(chessBoard.piece(i, j));
+                        Console.Write(" | ");
                     }
-                    
                 }
-                
                 System.Console.WriteLine();
                 System.Console.WriteLine();
+            }
+            System.Console.Write("      A     B     C     D     " +
+                "E     F     G     H");
+        }
+        public static void printChessBoard(ChessPiece chessPiece)
+        {
+            if (chessPiece.color == Color.White)
+            {
+                System.Console.Write(chessPiece);
+            }
+            else
+            {
+                ConsoleColor aux = Console.ForegroundColor;
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.Write(chessPiece);
+                Console.ForegroundColor = aux;
+
             }
         }
     }
