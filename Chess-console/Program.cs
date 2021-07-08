@@ -11,7 +11,7 @@ namespace Chess_console
             try
             {
 
-                ChessPosition chessPosition = new ChessPosition('c', 7);
+                ChessPosition chessPosition = new ChessPosition('a', 1);
 
                 Console.WriteLine(chessPosition);
 

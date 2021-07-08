@@ -4,6 +4,11 @@ using chessboard;
 
 namespace chessboard
 {
+
+    // This class is converting the type :
+    // "a, 1"(real mode chess) to "7,0"(business rule, matrix mode) 
+   
+
     class ChessPosition
     {
         public char column { get; set; }
