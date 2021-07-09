@@ -19,5 +19,11 @@ namespace chessboard
             this.numberOfmoves = 0;
             this.chessBoard = chessBoard;
         }
+
+        public void incrementMovements()
+        {
+            numberOfmoves++;
+        }
+
     }
 }

@@ -9,8 +9,5 @@ namespace chessboard
     {
         White,
         Black,
-        Yellow,
-        Blue,
-        Brown,
     }
 }

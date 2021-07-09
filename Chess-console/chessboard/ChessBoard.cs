@@ -69,5 +69,18 @@ namespace chessboard
             }
             return true;
         }
+        //o método abaixo remove a peça  de uma determinada posição
+        public ChessPiece removePiece(Position position)
+        {
+            if (piece(position) == null)
+            {
+                return null;
+            }
+            ChessPiece aux = piece(position);
+            aux.position = null;
+            chessPieces[position.line, position.column] = null;
+            return aux;
+        }
+
     }
 }

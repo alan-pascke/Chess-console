@@ -21,7 +21,7 @@ namespace chessboard
         }
         public Position toPosition()
         {
-            return new Position(8 - line, column - 'a');
+            return new Position(8 - line,column - 'a');
         }
         public override string ToString()
         {
