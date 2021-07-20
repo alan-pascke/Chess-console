@@ -11,9 +11,15 @@ namespace chess
         {
 
         }
+
         public override string ToString()
         {
             return "Knt";
+        }
+
+        public override bool[,] possibleMoves()
+        {
+            throw new NotImplementedException();
         }
     }
 }

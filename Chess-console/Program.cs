@@ -21,6 +21,14 @@ namespace Chess_console
                     Console.Write("Enter to origin position :");
                     Position origin = Screen.readChessPosition().toPosition();
 
+                    Console.WriteLine(origin);
+
+                    bool[,] possiblePositions = chessGame.chessBoard.piece(origin).possibleMoves();
+
+                    Console.Clear();
+                    Screen.printChessBoard(chessGame.chessBoard, possiblePositions);
+
+                    Console.WriteLine();
                     Console.Write("Enter to destiny position :");
                     Position destiny = Screen.readChessPosition().toPosition();
 
@@ -28,13 +36,7 @@ namespace Chess_console
 
 
                     Screen.printChessBoard(chessGame.chessBoard);
-
-
                 }
-
-
-                
-
 
             }
             catch (ChessboardExeption e)

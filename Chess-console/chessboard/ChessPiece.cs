@@ -5,12 +5,12 @@ using System.Text;
 
 namespace chessboard
 {
-    class ChessPiece
+    abstract class ChessPiece
     {
         public Position position { get; set; }
         public Color color { get; protected set; }
         public int numberOfmoves { get; protected set; }
-        public ChessBoard chessBoard { get; set; }
+        public ChessBoard chessBoard { get; protected set; }
 
         public ChessPiece(ChessBoard chessBoard ,Color color)
         {
@@ -24,6 +24,8 @@ namespace chessboard
         {
             numberOfmoves++;
         }
+        public abstract bool[,] possibleMoves();
+
 
     }
 }
